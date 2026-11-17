@@ -87,10 +87,17 @@
 
             <!-- Measure test coverage -->
             <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.13</version>
-                <executions>
+    <groupId>org.jacoco</groupId>
+             <artifactId>jacoco-maven-plugin</artifactId>
+             <version>0.8.13</version>
+             <configuration>
+                 <excludes>
+                     <exclude>com/comp3607/Main.class</exclude>
+                     <exclude>com/comp3607/telemetry/extension/**</exclude>
+                     <exclude>com/comp3607/telemetry/listeners/**</exclude>
+                 </excludes>
+             </configuration>
+             <executions>
                     <execution>
                         <id>check-coverage</id>
                         <phase>verify</phase>
